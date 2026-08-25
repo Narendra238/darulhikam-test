@@ -11,16 +11,11 @@ class YayasanForm
     {
         return $schema
             ->components([
-                TextInput::make('nama_yayasan')
-                    ->required(),
-                TextInput::make('alamat'),
-                TextInput::make('telepon')
-                    ->tel(),
-                TextInput::make('email')
-                    ->label('Email address')
-                    ->email(),
-                TextInput::make('website')
-                    ->url(),
+                TextInput::make('nama_yayasan')->required(),
+                TextInput::make('alamat')->nullable(),
+                TextInput::make('telepon')->tel()->nullable(),
+                TextInput::make('email')->label('Email address')->email()->nullable(),
+                TextInput::make('website')->url()->nullable(),
             ]);
     }
 }

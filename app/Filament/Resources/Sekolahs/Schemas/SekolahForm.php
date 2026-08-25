@@ -12,18 +12,19 @@ class SekolahForm
     {
         return $schema
             ->components([
-                Select::make('yayasan_id')
-                    ->relationship('yayasan', 'nama_yayasan')
-                    ->required(),
-                TextInput::make('nama_sekolah')
-                    ->required(),
-                TextInput::make('alamat'),
-                TextInput::make('telepon')
-                    ->tel(),
-                TextInput::make('email')
-                    ->label('Email address')
-                    ->email(),
-                TextInput::make('jenjang')
+                Select::make('yayasan_id')->relationship('yayasan', 'nama_yayasan')->required(),
+                TextInput::make('nama_sekolah')->required(),
+                TextInput::make('alamat')->required(),
+                TextInput::make('telepon')->tel()->required(),
+                TextInput::make('email')->label('Email address')->email()->required(),
+                Select::make('jenjang')
+                    ->options([
+                        'Day Care' => 'Day Care',
+                        'TK' => 'TK',
+                        'SD' => 'SD',
+                        'SMP' => 'SMP',
+                        'SMA' => 'SMA',
+                    ])
                     ->required(),
             ]);
     }

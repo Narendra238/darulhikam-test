@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('sekolahs', function (Blueprint $table) {
             $table->id();
+            //Relasi ke table yayasan
+            $table->foreignId('yayasan_id')->constrained()->onDelete('cascade');
+            $table->string('nama_sekolah');
+            $table->string('alamat')->nullable();
+            $table->string('telepon')->nullable();
+            $table->string('email')->nullable();
+            $table->string('jenjang'); //Day Care, TK, SD, SMP, SMA
             $table->timestamps();
         });
     }

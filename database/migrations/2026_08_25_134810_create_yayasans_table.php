@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('yayasans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_yayasan');
+            $table->string('alamat')-> nullable();
+            $table->string('telepon')-> nullable();
+            $table->string('email')-> nullable();
+            $table->string('website')-> nullable();
             $table->timestamps();
         });
     }

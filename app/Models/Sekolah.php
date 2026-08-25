@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sekolah extends Model
 {
-    //
+    protected $guarded = [];
+
+    public function yayasan()
+    {
+        return $this->belongsTo(Yayasan::class);
+    }
 }
